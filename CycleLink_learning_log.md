@@ -1,5 +1,5 @@
 # CycleLink 학습 기록
-
+## 목표 : Supabase + Google oAuth 감 잡기
 ## 2025-09-09 : Supabase + Google OAuth 연동 성공
 
 ### 1. 환경 세팅
@@ -53,3 +53,7 @@ flutter run -d chrome --web-port=3000
 ### 4. 결과
 
 로그인 화면 → Google 계정 선택 → Supabase 세션 정상 생성 확인
+
+### 5. 다음 목표
+
+study 브랜치에서 init commit 상태부터 만들어보기
