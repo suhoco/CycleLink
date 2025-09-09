@@ -21,15 +21,15 @@ Authentication → Providers → Google → Enable
 Google Cloud Console에서 OAuth 클라이언트 발급
 
 Authorized JavaScript origins:
-
+```
 http://localhost:3000
-
+```
 
 Authorized redirect URIs:
-
+```
 http://localhost:3000
 http://localhost:3000/
-
+```
 
 발급받은 Client ID/Secret을 Supabase에 입력
 
@@ -47,9 +47,9 @@ Redirect URI 등록할 때 경로 포함 불가 오류
 로그인 후 connection refused
 → 원인: Flutter dev server 포트 불일치
 → 해결:
-
+```
 flutter run -d chrome --web-port=3000
-
+```
 ### 4. 결과
 
 로그인 화면 → Google 계정 선택 → Supabase 세션 정상 생성 확인
