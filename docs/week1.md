@@ -147,10 +147,10 @@ await Supabase.initialize(
 
 ## 1주차 결과
 
--Google OAuth 로그인 / 로그아웃 정상 동작
+- Google OAuth 로그인 / 로그아웃 정상 동작
 
--profiles 자동 생성 + 수정 가능
+- profiles 자동 생성 + 수정 가능
 
--세션 유지 및 자동 라우팅 정상 작동
+- 세션 유지 및 자동 라우팅 정상 작동
 
--계정 전환 정상 동작
+- 계정 전환 정상 동작
