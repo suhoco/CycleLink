@@ -21,17 +21,15 @@ class HomeScreen extends StatelessWidget {
             icon: const Icon(Icons.person),
           ),
           IconButton(
-            tooltip: '로그아웃',
-            onPressed: () async {
-              await Supabase.instance.client.auth.signOut();
-              // signOut 후엔 AuthGate에서 로그인 화면으로 바뀜
-              if (context.mounted) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('로그아웃 되었습니다')),
-                );
-              }
-            },
             icon: const Icon(Icons.logout),
+            onPressed: () async {
+              await Supabase.instance.client.auth.signOut(); // ← 이것만
+              if (!context.mounted) return;
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('로그아웃 되었습니다')),
+              );
+              // Navigator.pop() 같은 추가 네비게이션은 하지 마세요.
+            },
           ),
         ],
       ),
