@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'profile_screen.dart'; // 아래 2번에서 만들 파일
+import 'profile_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,15 +21,16 @@ class HomeScreen extends StatelessWidget {
             icon: const Icon(Icons.person),
           ),
           IconButton(
-            icon: const Icon(Icons.logout),
+            tooltip: '로그아웃',
             onPressed: () async {
-              await Supabase.instance.client.auth.signOut(); // ← 이것만
-              if (!context.mounted) return;
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('로그아웃 되었습니다')),
-              );
-              // Navigator.pop() 같은 추가 네비게이션은 하지 마세요.
+              await Supabase.instance.client.auth.signOut();
+              if (context.mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('로그아웃 되었습니다')),
+                );
+              }
             },
+            icon: const Icon(Icons.logout),
           ),
         ],
       ),
